@@ -1,0 +1,31 @@
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+html,body{height:100%;overflow:hidden;background:#cfe5e0;font-family:"Trebuchet MS","Segoe UI",system-ui,sans-serif;touch-action:none;user-select:none;-webkit-user-select:none}
+#app{display:flex;flex-direction:column;height:100%;max-width:900px;margin:0 auto}
+header{display:flex;align-items:flex-start;justify-content:space-between;padding:calc(14px + env(safe-area-inset-top)) 14px 0}
+.round{width:52px;height:52px;border-radius:50%;border:0;background:#fff;display:grid;place-items:center;cursor:pointer;box-shadow:0 2px 6px rgba(0,0,0,.08);transition:transform .1s}
+.round svg{width:26px;height:26px}
+.round:active{transform:scale(.9)}
+.center{text-align:center;padding-top:2px}
+.pill{display:inline-block;background:#9a9fa0;color:#fff;font-size:11px;font-weight:800;letter-spacing:.5px;padding:2px 14px;border-radius:99px}
+h1{font-size:26px;color:#9b4d76;font-weight:900;margin-top:2px}
+#hearts{display:flex;justify-content:center;gap:10px;margin:6px 0 12px}
+#hearts svg{width:30px;height:30px;fill:#c0281f;transition:fill .25s}
+#hearts svg.lost{fill:#fff}
+#hearts svg.hit{animation:pop .4s}
+@keyframes pop{50%{transform:scale(1.45)}}
+#bar{height:5px;background:rgba(0,0,0,.05);box-shadow:0 2px 3px rgba(0,0,0,.05)}
+#barFill{display:block;height:100%;width:0;background:#9ab8b1;transition:width .3s}
+#stage{flex:1;position:relative;min-height:0}
+canvas{position:absolute;inset:0;width:100%;height:100%;display:block}
+.hidden{display:none!important}
+#overlay,#levels{position:fixed;inset:0;background:rgba(207,229,224,.92);display:grid;place-items:center;z-index:10;padding:20px}
+.card{background:#fff;border-radius:22px;padding:28px 26px;text-align:center;max-width:340px;width:100%;box-shadow:0 10px 30px rgba(0,0,0,.12)}
+.card h2{color:#9b4d76;font-size:28px;margin-bottom:8px}
+.card p{color:#52625f;margin-bottom:12px}
+.btn{display:block;width:100%;padding:14px;border:0;border-radius:14px;background:#9b4d76;color:#fff;font-size:17px;font-weight:800;cursor:pointer;margin-top:10px}
+.btn.ghost{background:#e9f1ef;color:#9b4d76}
+#levels .card{max-width:420px}
+#lvGrid{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;max-height:58vh;overflow:auto;margin:14px 0 4px;padding:4px;touch-action:pan-y}
+#lvGrid button{aspect-ratio:1;border:0;border-radius:14px;background:#e9f1ef;color:#9b4d76;font-size:18px;font-weight:800;cursor:pointer}
+#lvGrid button.cur{background:#9b4d76;color:#fff}
+#lvGrid button:disabled{opacity:.35;cursor:not-allowed}
